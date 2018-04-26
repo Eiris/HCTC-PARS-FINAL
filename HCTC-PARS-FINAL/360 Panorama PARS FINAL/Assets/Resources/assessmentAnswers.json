@@ -1,0 +1,42 @@
+{
+    "hazards" : {
+        "Ladders": [
+                "Height-to-Run Ratio",
+                "Step Ladder Incorrect Usage",
+                "Ladder Overextension"
+        ] ,
+        "Fall Arresting": [
+                "Untied Worker",
+                "Safety Nets",
+                "Fall Body Harness"
+        ] ,
+        "Edge Protection": [
+                "Improper Gaurdrails",
+                "Warning Lines System",
+                "Floor Opening"
+        ] ,
+        "Housekeeping": [
+                "Electrical Cords",
+                "Material Storage",
+                "Wet Surfaces"
+        ]
+    },
+    "answers" : {
+        "01_A" : [
+            "Untied Worker",
+            "Safety Nets"
+        ],
+        "02_A" : [
+            "Untied Worker",
+            "Safety Nets"
+        ],
+        "03_A" : [
+            "Untied Worker",
+            "Safety Nets"
+        ],
+        "04_A" : [
+            "Untied Worker",
+            "Safety Nets"
+        ]
+    }
+}

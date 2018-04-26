@@ -1,0 +1,31 @@
+[ {
+    "answers" : [ "Stepladder", "Improper Railguard" ],
+    "key" : "01_A"
+  }, {
+    "answers" : [ "Improper Railguard", "Material Storage" ],
+    "key" : "02_A"
+  }, {
+    "answers" : [ "Scissor Lift in Tight Space" ],
+    "key" : "03_A"
+  }, {
+    "answers" : [ "Swing/Slipping Objects", "Improper Railguard" ],
+    "key" : "04_A"
+  }, {
+    "answers" : [ "Material Storage" ],
+    "key" : "05_A"
+  }, {
+    "answers" : [ "Openings" ],
+    "key" : "06_A"
+  }, {
+    "answers" : [ "Untied Worker", "Material Storage", "Power Line" ],
+    "key" : "07_A"
+  }, {
+    "answers" : [ "Lighting Fixtures", "Tripping Hazard", "Scissor Lift in Tight Space" ],
+    "key" : "08_A"
+  }, {
+    "answers" : [ "Cave In", "Swing/Slipping Objects" ],
+    "key" : "09_A"
+  }, {
+    "answers" : [ "Cave In", "Ladder Access", "Swing/Slipping Objects" ],
+    "key" : "010_A"
+  } ]
