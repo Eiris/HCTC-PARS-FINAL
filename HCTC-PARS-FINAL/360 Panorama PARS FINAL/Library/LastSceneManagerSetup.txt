@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/GameScenes/12_Results.unity
+- path: Assets/GameScenes/Pilot_Study/Training/08_T.unity
   isLoaded: 1
   isActive: 1

@@ -3,9 +3,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using Firebase;
-using Firebase.Database;
-using Firebase.Unity.Editor;
 using System.Linq;
 
 public class PARSDataManager
@@ -13,7 +10,7 @@ public class PARSDataManager
 	private string sessionID;
 	private static PARSDataManager instance;
 	protected string gameDataFileName;
-	private DatabaseReference reference;
+	// private DatabaseReference reference;
 	protected string jsonOutput;
 	private string sessionStart;
 
@@ -70,12 +67,9 @@ public class PARSDataManager
 		}
 	}
 
-	protected void storeToFirebase(string keyLocation) {
-		if(this.reference != null) {
-			
+	protected void storeToFirebase(string keyLocation) {			
 			// Firebase Code
         	// reference.Child(keyLocation).Child(this.sessionID).Child(this.sessionStart).SetRawJsonValueAsync(jsonOutput);
-		}
     }
 
 	public AnswerKey retrieveAnswers(Action<Question[]> populationMethod) {

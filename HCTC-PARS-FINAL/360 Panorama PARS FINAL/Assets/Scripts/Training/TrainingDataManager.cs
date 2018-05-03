@@ -3,9 +3,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using Firebase;
-using Firebase.Database;
-using Firebase.Unity.Editor;
+// using Firebase;
+// using Firebase.Database;
+// using Firebase.Unity.Editor;
 
 public class TrainingDataManager : PARSDataManager {
 

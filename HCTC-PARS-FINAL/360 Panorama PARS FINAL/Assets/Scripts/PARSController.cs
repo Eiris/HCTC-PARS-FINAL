@@ -3,8 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using Firebase;
-using Firebase.Unity.Editor;
 
 public class PARSController : MonoBehaviour {
 	public static PARSController instance;
