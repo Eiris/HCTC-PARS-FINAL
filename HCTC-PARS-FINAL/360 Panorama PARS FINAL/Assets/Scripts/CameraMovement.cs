@@ -51,6 +51,7 @@ public class CameraMovement : MonoBehaviour {
 			dragging = false;
 		}
 
+		// Debug.Log("Is over gameobject: " + eventSys.IsPointerOverGameObject());
 		if(!eventSys.IsPointerOverGameObject() || dragging) {
 			FOV += Input.GetAxis("Mouse ScrollWheel") * sensitivity;
 			FOV = Mathf.Clamp(FOV, minFOV, maxFOV);

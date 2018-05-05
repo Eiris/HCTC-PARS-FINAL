@@ -18,7 +18,7 @@ public class TrainingDataManager : PARSDataManager {
     public void save() {
         this.addTimesToJson();
         this.addRoundsToJson();
-        jsonOutput += "\n}";
+        // jsonOutput += "\n}";
         this.storeToFirebase("0_TrainingResponses");
         this.saveToFile();
     }

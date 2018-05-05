@@ -48,11 +48,11 @@ public class PARSDataManager
 	}
 
 	string roundsToJson(List<Round> rounds){
-		string jsonOutput =  "\"responses\": " + "{";
+		string jsonOutput =  "\n\t\t\"responses\": " + "{";
 		foreach (AssessmentRound round in rounds) {
-			jsonOutput += "\n\t\t \"" + round.getSceneID() + "\":" + JsonUtility.ToJson (round) + ",";
+			jsonOutput += "\n\t\t\t \"" + round.getSceneID() + "\":" + JsonUtility.ToJson (round) + ",";
 		}
-		jsonOutput += "\n\t}";
+		jsonOutput += "\n\t\t}";
 		return jsonOutput;
 	}
 
@@ -61,10 +61,34 @@ public class PARSDataManager
 		Debug.Log("FILE: " + filePath);
 		Debug.Log("Saving to FILE: " + input);
 		Debug.Log("File Exists: " + File.Exists (filePath));
-		// System("FILE: ", filePath);
-		using(StreamWriter sw = File.AppendText(filePath)) {
-			sw.Write(",\n{\"" + this.sessionID + "\":\n\t" + input + "}");
+		Debug.Log((File.Exists(filePath)) ? ",\n" : "");
+
+		string[] fullJSONOutput;
+		if (!File.Exists(filePath)) {
+			using (var stream = File.Create(filePath)) { }
+			fullJSONOutput = new string[]{"[\n" + "{\"" + this.sessionID + "\":\n\t" + input + "}" + "\n]"};
+		} else {
+			var lines = File.ReadAllLines(filePath);
+			List<String> linesList = new List<String>(lines);
+			linesList.RemoveAt(linesList.Count - 1);
+			// lines[lines.Length-1] = "";
+			string partJSONOoutput = ",\n" + "{\"" + this.sessionID + "\":\n\t" + input + "}"  + "\n]";
+			linesList.Add(partJSONOoutput);
+			fullJSONOutput = linesList.ToArray();
+			Debug.Log(fullJSONOutput);
 		}
+
+		File.WriteAllLines(filePath, fullJSONOutput);
+
+		// lines[lines.Length-1] = "";
+
+		
+
+
+		// using(StreamWriter sw = File.AppendText(filePath)) {
+			
+		// 	sw.Write(fullJSONOutput);
+		// }
 	}
 
 	protected void storeToFirebase(string keyLocation) {			

@@ -11,7 +11,8 @@ public class TrainingHazardController : MonoBehaviour {
 	public HazardIconController icon;
 	public HazardContentView content;
 	public TrainingCollectionCell cell;
-
+	
+	private TrainingController tcDelegate;
 	private State currentState;
 
 	// Use this for initialization
@@ -32,6 +33,10 @@ public class TrainingHazardController : MonoBehaviour {
 		}
 	}
 
+	public void setDelegate(TrainingController tc) {
+		this.tcDelegate = tc;
+	}
+
 	public void setColor(Color color) {
 		print("COLOR GOT CALLED!");
 	}
@@ -42,6 +47,7 @@ public class TrainingHazardController : MonoBehaviour {
 	
 	public void SetState(State state)
     {
+		Debug.Log("Set the state: " + state);
         if (currentState != null)
             currentState.OnStateExit();
 
@@ -50,8 +56,22 @@ public class TrainingHazardController : MonoBehaviour {
         if (currentState != null)
             currentState.OnStateEnter();
     }
+
+	public void SetState(string stateName) {
+		switch (stateName)
+		{
+			case "HazardOnState":
+				this.SetState(new HazardOnState(this));
+				break;
+			case "HazardOffState":
+				this.SetState(new HazardOffState(this));
+				break;
+		}
+	}
 	
 	public State ToggleState() {
+		this.tcDelegate.setOtherStatesToOff(this);
+		Debug.Log("We called the toggle switch: " + this.tcDelegate);
 		State newState = null;
 		if (currentState is HazardOffState) {
 			newState = new HazardOnState(this);
