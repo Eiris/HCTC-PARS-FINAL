@@ -23,8 +23,8 @@ public class CameraMovement : MonoBehaviour {
 //	public float minX = -360.0f;
 //	public float maxX = 360.0f;
 //	
-	public float minY = 0.0f; //-45.0f was the original value used
-	public float maxY = 35.0f; //45.0f was the original value used
+	float minY = -90.0f; //-45.0f was the original value used
+	float maxY = 90.0f; //45.0f was the original value used
 //
 	public float sensX = 100.0f;
 	public float sensY = 100.0f;
@@ -51,6 +51,7 @@ public class CameraMovement : MonoBehaviour {
 			dragging = false;
 		}
 
+		// Debug.Log("Is over gameobject: " + eventSys.IsPointerOverGameObject());
 		if(!eventSys.IsPointerOverGameObject() || dragging) {
 			FOV += Input.GetAxis("Mouse ScrollWheel") * sensitivity;
 			FOV = Mathf.Clamp(FOV, minFOV, maxFOV);
@@ -84,8 +85,8 @@ public class CameraMovement : MonoBehaviour {
 				this.lerping = false;
 				rotationX += Input.GetAxis ("Mouse X") * sensX * Time.deltaTime;
 				rotationY += Input.GetAxis ("Mouse Y") * sensY * Time.deltaTime;
-				rotationY = Mathf.Clamp (rotationY, minY, maxY);
-				transform.localEulerAngles = new Vector3 (-rotationY, rotationX, 0);
+				rotationY = Mathf.Clamp (eulerTo360(rotationY), minY, maxY);
+				transform.localEulerAngles = new Vector3 (-rotationY, rotationX, transform.localEulerAngles.z);
 			} 
 		}
 
@@ -110,8 +111,19 @@ public class CameraMovement : MonoBehaviour {
 	}
 
 	void reloadRotation() {
-		rotationX = transform.rotation.eulerAngles.y;
-		rotationY = -transform.rotation.eulerAngles.x;
+		rotationX = transform.localRotation.eulerAngles.y;
+		rotationY = -transform.localRotation.eulerAngles.x;
+	}
+
+	float eulerTo360(float eulerValue) {
+		while(Mathf.Abs(eulerValue) > 180) {
+			if(eulerValue > 0) {
+				eulerValue -= 360;
+			} else if(eulerValue < 0) {
+				eulerValue += 360;
+			}
+		}
+		return eulerValue;
 	}
 
 //	void OnGUI(){

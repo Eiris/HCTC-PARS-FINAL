@@ -27,6 +27,14 @@ public class TrainingController : PARSController {
 		this.startRound();
 	}
 
+	public void setOtherStatesToOff(TrainingHazardController selectedHazardController){
+		foreach(TrainingHazardController hazardController in currentRoundTrainingHazardControllers) {
+			if(hazardController != selectedHazardController) {
+				hazardController.SetState("HazardOffState");
+			}
+		}
+	}
+
 	public override void startRound(){
 		this.currentRound = new Round(this.getCurrentSceneID());
 	}
@@ -38,6 +46,8 @@ public class TrainingController : PARSController {
 			collection.removeAllCells();
 			foreach(GameObject hazardObject in trainingHazards) {
 				TrainingHazardController hazardController = hazardObject.GetComponent<TrainingHazardController>();
+				currentRoundTrainingHazardControllers.Add(hazardController);
+				hazardController.setDelegate(this);
 				hazardController.cell = collection.addCell(hazardController);
 			}
 		} catch (NullReferenceException ex) {
@@ -59,6 +69,7 @@ public class TrainingController : PARSController {
 			sceneHazards.Add(hc.hazard);
 		}
 		currentRound.setResponses(sceneHazards);
+		currentRoundTrainingHazardControllers.Clear();
 		base.completeCurrentRound();
 	}
 

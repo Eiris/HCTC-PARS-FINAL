@@ -1,0 +1,80 @@
+<linker>
+	<assembly fullname="Assembly-CSharp">
+		<type fullname="SceneLink">
+			<method name="ChangeToScene"/>
+			<method name="ChangeToScene"/>
+			<method name="ChangeToScene"/>
+			<method name="ChangeToScene"/>
+		</type>
+		<type fullname="DemographicViewController">
+			<method name="buttonPressed"/>
+		</type>
+		<type fullname="ResultsController">
+			<method name="endSession"/>
+		</type>
+		<type fullname="NavigationController">
+			<method name="pressedNext"/>
+			<method name="pressedNext"/>
+			<method name="pressedNext"/>
+			<method name="pressedNext"/>
+			<method name="pressedNext"/>
+			<method name="pressedNext"/>
+			<method name="pressedNext"/>
+			<method name="pressedNext"/>
+			<method name="pressedNext"/>
+			<method name="pressedNext"/>
+			<method name="pressedNext"/>
+			<method name="pressedNext"/>
+			<method name="pressedNext"/>
+			<method name="pressedNext"/>
+			<method name="pressedNext"/>
+			<method name="pressedNext"/>
+			<method name="pressedNext"/>
+			<method name="pressedNext"/>
+			<method name="pressedNext"/>
+			<method name="pressedNext"/>
+		</type>
+		<type fullname="TrainingCollectionCell">
+			<method name="pressed"/>
+			<method name="pressed"/>
+			<method name="pressed"/>
+			<method name="pressed"/>
+			<method name="pressed"/>
+			<method name="pressed"/>
+			<method name="pressed"/>
+			<method name="pressed"/>
+			<method name="pressed"/>
+			<method name="pressed"/>
+			<method name="pressed"/>
+			<method name="pressed"/>
+			<method name="pressed"/>
+			<method name="pressed"/>
+			<method name="pressed"/>
+			<method name="pressed"/>
+			<method name="pressed"/>
+			<method name="pressed"/>
+			<method name="pressed"/>
+			<method name="pressed"/>
+			<method name="pressed"/>
+			<method name="pressed"/>
+			<method name="pressed"/>
+			<method name="pressed"/>
+			<method name="pressed"/>
+			<method name="pressed"/>
+			<method name="pressed"/>
+			<method name="pressed"/>
+			<method name="pressed"/>
+			<method name="pressed"/>
+			<method name="pressed"/>
+			<method name="pressed"/>
+			<method name="pressed"/>
+			<method name="pressed"/>
+			<method name="pressed"/>
+			<method name="pressed"/>
+			<method name="pressed"/>
+			<method name="pressed"/>
+			<method name="pressed"/>
+			<method name="pressed"/>
+		</type>
+	</assembly>
+</linker>

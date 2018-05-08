@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using Firebase;
-using Firebase.Unity.Editor;
 
 public class PARSController : MonoBehaviour {
 	public static PARSController instance;
@@ -47,7 +46,7 @@ public class PARSController : MonoBehaviour {
 
 	void Update() {
 		if(this.isTimedTraining) {
-			this.set(this.allowedTimePerRound - (System.DateTime.Now - System.DateTime.Parse(this.currentRound.startTime)).Seconds);
+			this.set(this.allowedTimePerRound - (int)(System.DateTime.Now.Subtract(System.DateTime.ParseExact(this.currentRound.startTime, "yyyy-MM-dd\\THH:mm:ss\\Z", CultureInfo.InvariantCulture)).TotalSeconds));
 		}
 	}
 
