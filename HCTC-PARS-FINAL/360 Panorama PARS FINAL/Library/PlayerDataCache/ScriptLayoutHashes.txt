@@ -190,6 +190,6 @@ cb4d7fdb5e4e62105576c948b77a0fbc Assembly-CSharp.dll:.Finish_Button
 837c421aabcbac4fa478686ed8802937 Assembly-CSharp.dll:.ToggleController
 034a3e05d1a05735fb2f25ed31125b49 Assembly-CSharp.dll:.DemographicViewController
 6c5d6f654e4a491e73ef4782479f4584 Assembly-CSharp.dll:.URL_Access_Conditional
-8d91eb82ed05077713130711d44b525e Assembly-CSharp.dll:.ResultsController
+68043ca100352e1cc86ff2e3a26a6181 Assembly-CSharp.dll:.ResultsController
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Start_Button
 1225580e0c4d4c9c3e1211002b1b5b50 Assembly-CSharp.dll:.ResultCardCell
